@@ -50,8 +50,8 @@
       <label>Image</label>
     </div>
     <div class="col-sm-10">
-      <p-fileUpload mode="basic" name="file" [url]="uploadUrl" accept="image/*" maxFileSize="1000000" (onUpload)="onUpload($event)"
-         style="cursor:pointer"></p-fileUpload>
+      <p-fileUpload mode="basic" name="file" [url]="uploadUrl" accept="image/*" maxFileSize="1000000" #file (onSelect)="onSelect($event, file)" (onUpload)="onUpload($event)"
+      style="cursor:pointer"></p-fileUpload>
 
       <div *ngIf="productForm.controls['file'].errors && (productForm.controls['file'].dirty || form.submitted)" class="text-danger">
         <span [hidden]="!productForm.controls['file'].hasError('required')">

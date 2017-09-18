@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiAddress: 'http://localhost:3000/api',
+  baseAddress: 'http://localhost:4200',
+  cartName: 'cart',
+  paymentGatewayUrl: 'https://test.payu.in/_payment',
+  successUrl: 'http://localhost:3000/api/store/paymentstatus',
+  failedUrl: 'http://localhost:3000/api/store/paymentstatus',
+  key: 'gtKFFx',
+  salt: 'eCwWELxi',
 };

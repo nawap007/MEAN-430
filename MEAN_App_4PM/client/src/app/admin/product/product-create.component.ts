@@ -26,8 +26,8 @@ export class ProductCreateComponent implements OnInit {
     this.productForm = formbuilder.group({
       'name': [null, [Validators.required]],
       'unitPrice': [null, [Validators.required]],
-      'file': [null],
-    //  'file': [null, [Validators.required]],
+    //  'file': [null],
+      'file': [null, [Validators.required]],
       'categoryId': ['', [Validators.required]]
     });
   }
@@ -40,8 +40,21 @@ export class ProductCreateComponent implements OnInit {
       });
   }
 
+  onSelect(event, pfuReference) {
+    const file = event.files[0];
+    if (file) {
+      const image = new Image();
+      image.src = file.objectURL.changingThisBreaksApplicationSecurity;
+      // disabling auto to prevent the file to upload
+      pfuReference.auto = false;
+      image.addEventListener('load', () => {
+        pfuReference.auto = true;
+        pfuReference.upload();
+      });
+    }
+  }
   onUpload(event) {
-  // console.log(event);
+    // console.log(event);
     let res =JSON.parse(event.xhr.response);
     console.log(res.filePath);
      this.productForm.controls['file'].setValue(res.filePath);

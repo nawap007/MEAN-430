@@ -20,8 +20,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 app.use(cors());
 
-app.use('/',webRoutes);
 app.use('/api',apiRoutes);
+app.use('/',webRoutes);
 
 app.listen(3000, function() {
     console.log('Server is running at http://localhost:3000');

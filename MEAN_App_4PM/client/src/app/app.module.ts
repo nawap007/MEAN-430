@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { FileUploadModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
@@ -18,7 +19,8 @@ import { UserAuthGuardService } from './services/user.guard.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FileUploadModule
   ],
   providers: [AuthService, GlobalService, UserAuthGuardService, AdminAuthGuardService],
   bootstrap: [AppComponent]

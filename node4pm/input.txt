@@ -1,0 +1,8 @@
+ Open Source 
+ JavaScript as Programming Language 
+ Scalable - Horizontal Scaling and Vertical Scaling
+ Better Performance 
+ Caching Support 
+ Lightweight and Extensible 
+ REST API Support 
+ Server Development 

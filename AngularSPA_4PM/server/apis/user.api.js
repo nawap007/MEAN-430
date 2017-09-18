@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
     const body = req.body;
     const obj = new user(body);
     obj.save().then(() => {
-        res.status(200).send('created');
+        res.status(201).send('created');
     }).catch((err) => {
         res.status(500).send('Internal Server Error');
     });

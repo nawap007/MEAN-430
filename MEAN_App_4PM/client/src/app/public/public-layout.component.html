@@ -5,7 +5,13 @@
       <a [routerLink]="['/']">Store</a>
     </li>
   </ul>
-  <ul class="nav navbar-nav pull-right">
+  <ul class="nav navbar-nav pull-right" *ngIf="user.name!=undefined || user.name!=null">
+      <li style="padding:15px">Welcome : {{user.name}}</li>
+      <li>
+        <a href="javascript:void(0);" (click)="signOut()">Sign Out</a>
+      </li>
+  </ul>
+  <ul class="nav navbar-nav pull-right" *ngIf="user==undefined">
     <li>
       <a [routerLink]="['/login']">Login</a>
     </li>

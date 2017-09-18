@@ -4,7 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {AppRoutingModule } from './app.routing';
+import { AppRoutingModule } from './app.routing';
+import { AuthService } from './services/auth.service';
+import { GlobalService } from './services/global.service';
+import { AdminAuthGuardService } from 'app/services/admin.guard.service';
+import { UserAuthGuardService } from './services/user.guard.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,7 @@ import {AppRoutingModule } from './app.routing';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService, GlobalService, UserAuthGuardService, AdminAuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

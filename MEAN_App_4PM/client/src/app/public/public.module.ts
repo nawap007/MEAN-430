@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { PublicRoutingModule, routedComponents } from './public-routing';
+import { UnauthorizeComponent } from './unauthorize/unauthorize.component';
 
 @NgModule({
   imports: [PublicRoutingModule, 
@@ -10,6 +11,6 @@ import { PublicRoutingModule, routedComponents } from './public-routing';
     FormsModule,
     HttpModule,
     ReactiveFormsModule],
-  declarations: [routedComponents]
+  declarations: [routedComponents, UnauthorizeComponent]
 })
 export class PublicModule {}

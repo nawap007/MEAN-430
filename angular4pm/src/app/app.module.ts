@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -19,6 +19,10 @@ import { MasterComponent } from './nested/master.component';
 import { DetailsComponent } from './nested/details.component';
 import { ParentHooksComponent } from './hooks/parent-hooks.component';
 import { ChildHooksComponent } from './hooks/child-hooks.component';
+import { TemplatedrivenComponent } from './templatedriven/templatedriven.component';
+
+import { EqualTextValidator } from "angular2-text-equality-validator";
+import { ModeldrivenComponent } from './modeldriven/modeldriven.component';
 
 @NgModule({
   declarations: [
@@ -35,11 +39,15 @@ import { ChildHooksComponent } from './hooks/child-hooks.component';
     MasterComponent,
     DetailsComponent,
     ParentHooksComponent,
-    ChildHooksComponent
+    ChildHooksComponent,
+    TemplatedrivenComponent,
+    EqualTextValidator,
+    ModeldrivenComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
     Ng2OrderModule

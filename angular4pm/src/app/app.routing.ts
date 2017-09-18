@@ -9,6 +9,8 @@ import { PipeComponent } from './pipe/pipe.component';
 import { ChildComponent } from './inheritance/child.component';
 import { MasterComponent } from './nested/master.component';
 import { ParentHooksComponent } from './hooks/parent-hooks.component';
+import { TemplatedrivenComponent } from './templatedriven/templatedriven.component';
+import { ModeldrivenComponent } from './modeldriven/modeldriven.component';
 
 const routes: Routes = [
     { path: '', component: DatabindingComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [
     { path: 'pipe', component: PipeComponent },
     { path: 'inheritance', component: ChildComponent },
     { path: 'nested', component: MasterComponent },
+    { path: 'templatedriven', component: TemplatedrivenComponent },
+    { path: 'modeldriven', component: ModeldrivenComponent },
     { path: 'hooks', component: ParentHooksComponent },
     { path: '**', redirectTo: 'notfound' },
 ];

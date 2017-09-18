@@ -1,0 +1,84 @@
+<h2>Template Driven</h2>
+<hr>
+<form #form="ngForm" class="form-horizontal" (ngSubmit)="SaveData(form)">
+  <div class="form-group">
+    <label class="col-sm-2">Name</label>
+    <div class="col-sm-10">
+      <input type="text" name="Name" class="form-control" #Name="ngModel" [(ngModel)]="user.Name" required/>
+      <div *ngIf="Name.errors && (form.submitted || Name.dirty)" class="text-danger">
+        Please Enter Name
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Username</label>
+    <div class="col-sm-10">
+      <input type="text" name="Username" class="form-control" #Username="ngModel" [(ngModel)]="user.Username" required minlength="3"
+      />
+      <div *ngIf="Username.errors && (form.submitted || Username.dirty)" class="text-danger">
+        <span [hidden]="!Username.errors.required">Please Enter Username</span>
+        <span [hidden]="!Username.errors.minlength">Username must have atleast three chars</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Email</label>
+    <div class="col-sm-10">
+      <input type="email" name="Email" class="form-control" #Email="ngModel" [(ngModel)]="user.Email" required/>
+      <div *ngIf="Email.errors && (form.submitted || Email.dirty)" class="text-danger">
+        <span [hidden]="!Email.errors.required">Please Enter Email</span>
+        <span [hidden]="!Email.errors.email">Please Enter Correct Email</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Password</label>
+    <div class="col-sm-10">
+      <input type="password" name="Password" class="form-control" #Password="ngModel" [(ngModel)]="user.Password" required/>
+      <div *ngIf="Password.errors && (form.submitted || Password.dirty)" class="text-danger">
+        Please Enter Password
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Confirm Password</label>
+    <div class="col-sm-10">
+      <input type="password" name="ConfirmPassword" class="form-control" validateEqualTo="Password" #ConfirmPassword="ngModel" [(ngModel)]="user.ConfirmPassword"
+        required/>
+      <div *ngIf="ConfirmPassword.errors && (form.submitted || ConfirmPassword.dirty)" class="text-danger">
+        <span [hidden]="!ConfirmPassword.errors.required"> Please Enter Confirm Password</span>
+        <span [hidden]="!(!ConfirmPassword.errors.required && ConfirmPassword.errors?.validateEqual)">Confirm Password doesn't matched</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Address</label>
+    <div class="col-sm-10">
+      <textarea rows="" cols="" name="Address" class="form-control" #Address="ngModel" [(ngModel)]="user.Address"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Contact</label>
+    <div class="col-sm-10">
+      <input type="text" name="Contact" class="form-control" #Contact="ngModel" [(ngModel)]="user.Contact" pattern="^[789]\d{9}$"
+      />
+      <div *ngIf="Contact.errors && (form.submitted || Contact.dirty)" class="text-danger">
+        Please Enter Correct Contact
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Accept Terms</label>
+    <div class="col-sm-10">
+      <input type="checkbox" name="Terms" #Terms="ngModel" [(ngModel)]="user.Terms" required/>
+      <div *ngIf="Terms.errors && (form.submitted || Terms.dirty)" class="text-danger">
+        Please Accept Terms
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10 col-sm-offset-2">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</form>

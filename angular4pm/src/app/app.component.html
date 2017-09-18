@@ -1,6 +1,18 @@
-<h1>
-  {{title}}
-</h1>
-<p>This is my first Angular App!</p>
+<div class="navbar navbar-default">
+  <a class="navbar-brand" [routerLink]="['/']">Title</a>
+  <ul class="nav navbar-nav">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <a [routerLink]="['/']">Data Binding</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/about','4','Shailendra']">About Us</a>
+    </li>
+     <li routerLinkActive="active">
+      <a [routerLink]="['/directive']">Directive</a>
+    </li>
+  </ul>
+</div>
 
-<!-- <app-databinding></app-databinding> -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

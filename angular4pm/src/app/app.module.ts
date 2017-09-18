@@ -5,18 +5,28 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DatabindingComponent } from './databinding/databinding.component';
+import { AboutComponent } from './about/about.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { AppRoutingModule } from './app.routing';
+import { DirectiveComponent } from './directive/directive.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatabindingComponent
+    DatabindingComponent,
+    AboutComponent,
+    NotfoundComponent,
+    DirectiveComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent, DatabindingComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

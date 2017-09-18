@@ -1,0 +1,14 @@
+<div class="navbar navbar-default">
+  <a class="navbar-brand" [routerLink]="['/']">Angular SPA</a>
+  <ul class="nav navbar-nav">
+    <li>
+      <a [routerLink]="['/']">Users List</a>
+    </li>
+    <li>
+      <a [routerLink]="['/create']">Create</a>
+    </li>
+  </ul>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

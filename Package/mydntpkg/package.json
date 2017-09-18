@@ -1,0 +1,15 @@
+{
+  "name": "dntcalc",
+  "version": "1.0.1",
+  "description": "my node test package",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dnt",
+    "testpackage"
+  ],
+  "author": "pro.shailendra@gmail.com",
+  "license": "ISC"
+}

@@ -1,0 +1,16 @@
+{ 
+    "_id" : NumberInt(1), 
+    "title" : "C Language", 
+    "author" : "Yaswant", 
+    "published_date" : ISODate("2010-09-24T00:00:00.000+0000"), 
+    "pages" : NumberInt(216), 
+    "language" : "English"
+}
+{ 
+    "_id" : NumberInt(2), 
+    "title" : "C# Book", 
+    "author" : "Balaguruswami", 
+    "published_date" : ISODate("2011-05-06T00:00:00.000+0000"), 
+    "pages" : NumberInt(68), 
+    "language" : "English"
+}

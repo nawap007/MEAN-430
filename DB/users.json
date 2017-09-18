@@ -1,0 +1,30 @@
+{ 
+    "_id" : 1.0, 
+    "firstname" : "shailendra", 
+    "lastname" : "chauhan", 
+    "salary" : 10000.0
+}
+{ 
+    "_id" : 2.0, 
+    "firstname" : "deepak", 
+    "lastname" : "kumar", 
+    "salary" : 12000.0
+}
+{ 
+    "_id" : 3.0, 
+    "firstname" : "mohan", 
+    "lastname" : "chauhan", 
+    "salary" : 8000.0
+}
+{ 
+    "_id" : 4.0, 
+    "firstname" : "kiran", 
+    "lastname" : "kumar", 
+    "salary" : 10000.0
+}
+{ 
+    "_id" : 5.0, 
+    "firstname" : "rohan", 
+    "lastname" : "kumar", 
+    "salary" : 12000.0
+}

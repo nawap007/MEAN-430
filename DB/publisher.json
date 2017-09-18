@@ -1,0 +1,17 @@
+{ 
+    "_id" : NumberInt(1), 
+    "name" : "O'Reilly", 
+    "location" : "CA", 
+    "books" : [
+        DBRef("books", NumberInt(1)), 
+        DBRef("books", NumberInt(2))
+    ]
+}
+{ 
+    "_id" : NumberInt(1), 
+    "name" : "S Chand", 
+    "location" : "IN", 
+    "books" : [
+        DBRef("books", NumberInt(3))
+    ]
+}

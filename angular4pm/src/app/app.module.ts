@@ -10,6 +10,15 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AppRoutingModule } from './app.routing';
 import { DirectiveComponent } from './directive/directive.component';
 import { HighlightDirective } from './highlight.directive';
+import { PipeComponent } from './pipe/pipe.component';
+import { ReversePipe } from './reverse.pipe';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { ParentComponent } from './inheritance/parent.component';
+import { ChildComponent } from './inheritance/child.component';
+import { MasterComponent } from './nested/master.component';
+import { DetailsComponent } from './nested/details.component';
+import { ParentHooksComponent } from './hooks/parent-hooks.component';
+import { ChildHooksComponent } from './hooks/child-hooks.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +27,22 @@ import { HighlightDirective } from './highlight.directive';
     AboutComponent,
     NotfoundComponent,
     DirectiveComponent,
-    HighlightDirective
+    HighlightDirective,
+    PipeComponent,
+    ReversePipe,
+    ParentComponent,
+    ChildComponent,
+    MasterComponent,
+    DetailsComponent,
+    ParentHooksComponent,
+    ChildHooksComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

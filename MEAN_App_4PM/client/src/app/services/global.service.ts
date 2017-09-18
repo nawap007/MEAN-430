@@ -16,8 +16,8 @@ export class GlobalService {
         this.cartName='cart';
 
         this.paymentGatewayUrl='https://test.payu.in/_payment';
-        this.successUrl='http://localhost:1300/api/store/paymentstatus';
-        this.failedUrl='http://localhost:1300/api/store/paymentstatus';
+        this.successUrl='http://localhost:3000/api/store/paymentstatus';
+        this.failedUrl='http://localhost:3000/api/store/paymentstatus';
         this.key='gtKFFx';
         this.salt='eCwWELxi';
     }

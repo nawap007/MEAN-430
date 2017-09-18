@@ -5,8 +5,8 @@ import { UserAuthGuardService } from './services/user.guard.service';
 
 const routes: Routes = [
     { path: '', loadChildren: 'app/public/public.module#PublicModule' },
-    { path: 'admin', loadChildren: '../app/admin/admin.module#AdminModule', canActivate:[AdminAuthGuardService] },
-    { path: 'user', loadChildren: '../app/user/user.module#UserModule', canActivate:[UserAuthGuardService]  },
+    { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule', canActivate:[AdminAuthGuardService] },
+    { path: 'user', loadChildren: 'app/user/user.module#UserModule', canActivate:[UserAuthGuardService]  },
 ];
 
 @NgModule({

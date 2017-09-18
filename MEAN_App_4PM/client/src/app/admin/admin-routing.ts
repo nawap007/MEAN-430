@@ -12,6 +12,8 @@ const routes: Routes = [
         path: '', component: AdminLayoutComponent, children: [
             { path: '', component: AdminDashboardComponent },
             { path: 'category', component: CategoryListComponent },
+            { path: 'category/create', component: CategoryCreateComponent },
+            { path: 'product/create', component: ProductCreateComponent },
             { path: 'product', component: ProductListComponent }]
     },
 ];

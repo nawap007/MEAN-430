@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { Cart } from '../models/cart';
 
 @Component({
   selector: 'app-public-layout',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 })
 export class PublicLayoutComponent implements OnInit {
   user: User;
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, public cart:Cart) {
     this.user = this.authService.user;
+    //console.log(this.user);
   }
 
   ngOnInit() {

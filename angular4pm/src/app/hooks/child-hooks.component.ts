@@ -6,21 +6,23 @@ import { Component, OnInit, OnDestroy, DoCheck, OnChanges, Input } from '@angula
   styles: []
 })
 export class ChildHooksComponent implements OnInit, OnDestroy, DoCheck, OnChanges {
+ 
   @Input() companyName;
+ 
   constructor() {
-    console.log('child : constructor');
+    console.log('ChildHooksComponent : constructor');
   }
 
   ngOnInit() {
-    console.log('child : ngOnInit');
+    console.log('ChildHooksComponent : ngOnInit');
   }
   ngDoCheck() {
-    console.log('child : ngDoCheck');
+    console.log('ChildHooksComponent : ngDoCheck');
   }
   ngOnChanges() {
-    console.log('child : ngOnChanges');
+    console.log('ChildHooksComponent : ngOnChanges');
   }
   ngOnDestroy() {
-    console.log('child : ngOnDestroy');
+    console.log('ChildHooksComponent : ngOnDestroy');
   }
 }

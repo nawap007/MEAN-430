@@ -23,6 +23,7 @@ import { TemplatedrivenComponent } from './templatedriven/templatedriven.compone
 
 import { EqualTextValidator } from "angular2-text-equality-validator";
 import { ModeldrivenComponent } from './modeldriven/modeldriven.component';
+import { ChipComponent } from './chip/ChipComponent';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ModeldrivenComponent } from './modeldriven/modeldriven.component';
     ChildHooksComponent,
     TemplatedrivenComponent,
     EqualTextValidator,
-    ModeldrivenComponent
+    ModeldrivenComponent,
+    ChipComponent,
   ],
   imports: [
     BrowserModule,

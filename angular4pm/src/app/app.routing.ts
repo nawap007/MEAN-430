@@ -11,6 +11,7 @@ import { MasterComponent } from './nested/master.component';
 import { ParentHooksComponent } from './hooks/parent-hooks.component';
 import { TemplatedrivenComponent } from './templatedriven/templatedriven.component';
 import { ModeldrivenComponent } from './modeldriven/modeldriven.component';
+import { ChipComponent } from 'app/chip/ChipComponent';
 
 const routes: Routes = [
     { path: '', component: DatabindingComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
     { path: 'templatedriven', component: TemplatedrivenComponent },
     { path: 'modeldriven', component: ModeldrivenComponent },
     { path: 'hooks', component: ParentHooksComponent },
+    { path: 'chips', component: ChipComponent },
     { path: '**', redirectTo: 'notfound' },
 ];
 

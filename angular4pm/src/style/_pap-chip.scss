@@ -1,0 +1,62 @@
+.pap-chip {
+  width: auto;
+  min-width: rem(65px, true);
+  padding: 0 rem(3px, true);
+  border: border(transparent);
+  border-radius: $border-radius-very-small;
+  margin: 0 rem(2px, true) rem(2px, true) 0;
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+
+  &--generic {
+    border-color: $generic-chip-bg;
+    background-color: $generic-chip-bg;
+    color: $generic-chip-color;
+  }
+
+  &__label {
+    width: auto;
+    min-width: 0%;
+    overflow: hidden;
+    flex: 0 1 auto;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__remove-btn {
+    @include btn-reset;
+    min-height: 20px;
+    margin-top: rem(1px, true);
+    margin-left: rem(6px, true);
+    cursor: pointer;
+
+    &:before {
+      content: "x";
+      display: flex;
+      font-family: edyt-icons;
+      font-size: .7em;
+      line-height: rem(10px, true);
+      text-transform: none;
+    }
+  }
+
+  &__menu-btn {
+    @include btn-reset;
+    margin-top: rem(1px, true);
+    margin-left: rem(6px, true);
+    cursor: pointer;
+
+    &:before {
+      content: "\f142";
+      display: flex;
+      font-family: font-awesome;
+      font-size: 1em;
+      line-height: rem(10px, true);
+      text-transform: none;
+    }
+  }
+}

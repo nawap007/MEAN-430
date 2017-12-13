@@ -1,0 +1,19 @@
+<span class="pap-chip__label">
+    {{label}}
+</span>
+<button *ngIf="showRemoveBtn"
+        class="pap-chip__remove-btn"
+        data-id="remove-chip-btn"
+        [attr.aria-title]="removeChipTxt"
+        
+        (click)="remove($event)">
+        
+</button>
+
+<button *ngIf="!showRemoveBtn"
+        class="pap-chip__menu-btn"
+        data-id="show-menu-chip-btn"
+        [attr.aria-title]="showChipMenuTxt"
+        (contextmenu)="openActionMenu($event)">
+        low button
+</button>

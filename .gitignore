@@ -1,3 +1,4 @@
 **/node_modules/**
 **/.npmrc
 **/settings.json
+**/node_module/**

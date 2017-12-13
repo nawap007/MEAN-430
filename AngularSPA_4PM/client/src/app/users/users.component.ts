@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
+import { log } from 'util';
 
 @Component({
   selector: 'app-users',
@@ -10,9 +11,13 @@ import { Router } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  constructor(private userService: UserService, private router:Router) { }
+  constructor(private userService: UserService, private router:Router) { 
+    console.log('constructor called');
+    
+  }
 
   ngOnInit() {
+    console.log('init called');
     this.userService.GetUsers().subscribe((res) => {
       this.users = res;
     });

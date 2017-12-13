@@ -9,7 +9,7 @@ export class ParentHooksComponent implements OnInit {
   company: string;
   IsCreated: boolean;
   constructor() {
-    console.log('parent : constructor');
+    console.log('ParentHooksComponent constructor called');
   }
 
   ngOnInit() {
@@ -18,6 +18,7 @@ export class ParentHooksComponent implements OnInit {
     console.log('parent : ngOnInit');
   }
   CreateDestroy() {
+    console.log('ParentHooksComponent CreateDestroy called');
     this.IsCreated = !this.IsCreated;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-directive',
@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class DirectiveComponent implements OnInit {
+
   num: number;
   alphabet:string;
   colors: any[]
   constructor() { }
-
   ngOnInit() {
     this.num = 1;
     this.colors = ["red", "blue", "green"];

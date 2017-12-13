@@ -1,2 +1,12 @@
 <h2>About Us</h2>
 <p>The requested parameters are : {{id}} , {{name}}</p>
+<div>
+<chip   class="pap-chip--generic"
+        [label]="label"
+        [payload]="{'sticker': 'ABCD', 'filterId': 1234}"
+        [showRemoveBtn]="true"
+        
+        [onRemove]="removeSticker"
+        [removeChipTxt]="removeChipTxt">
+</chip>
+</div>

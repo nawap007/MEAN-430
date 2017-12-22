@@ -1,10 +1,7 @@
 export class User {
-    Name: string;
-    Username: string;
-    Email: string;
-    Address: string;
-    Password: string;
-    ConfirmPassword: string;
-    Contact: string;
-    Terms: boolean;
+    _id: string;
+    name: string;
+    address: string;
+    contact: string;
+    date: string;
 }

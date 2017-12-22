@@ -1,39 +1,14 @@
 <div class="navbar navbar-default">
-  <a class="navbar-brand" [routerLink]="['/']">Title</a>
+  <a class="navbar-brand" [routerLink]="['/']">Angular SPA</a>
   <ul class="nav navbar-nav">
-    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-      <a [routerLink]="['/']">Data Binding</a>
+    <li>
+      <a [routerLink]="['/']">Users List</a>
     </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/chips']">chips</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/about','4','Shailendra']">About Us</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/directive']">Directive</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/pipe']">Pipe</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/inheritance']">Inheritance</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/nested']">Nested Components</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/hooks']">Hooks</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/templatedriven']">Template Driven</a>
-    </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/modeldriven']">Model Driven</a>
+    <li>
+      <a [routerLink]="['/create']">Create</a>
     </li>
   </ul>
 </div>
-
 <div class="container">
   <router-outlet></router-outlet>
 </div>

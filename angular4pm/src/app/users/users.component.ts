@@ -29,9 +29,9 @@ export class UsersComponent implements OnInit {
   deleteUser(id) {
     if (confirm('Are you sure to delete?')) {
       this.userService.DeleteUser(id).subscribe((res) => {
-        if (res.status == 200) {
+        if (res.status === 200) {
           for (let i = 0; i < this.users.length; i++) {
-            if (id == this.users[i]._id) {
+            if (id === this.users[i]._id) {
               this.users.splice(i, 1);
             }
           }

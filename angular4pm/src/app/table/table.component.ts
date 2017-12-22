@@ -10,7 +10,7 @@ import { log } from 'util';
   styles: []
 })
 export class TableComponent implements OnInit {
-
+  @Input() tag: string;
   @Input() users: User[];
 
   constructor() {

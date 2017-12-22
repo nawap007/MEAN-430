@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
   user: User;
+  public users: User[];
   id: any;
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) {
     this.user = new User();
@@ -23,19 +24,23 @@ export class CreateComponent implements OnInit {
         this.user = res;
       });
     });
+
+    this.userService.GetUsers().subscribe((res) => {
+      this.users = res;
+    });
   }
   SaveData(form: NgForm) {
     if (form.valid) {
       if (this.user._id !== undefined) {
         this.userService.UpdateUser(this.user).subscribe((res) => {
           if (res.status === 200) {
-            this.router.navigate(['/']);
+            // this.router.navigate(['/']);
           }
         });
       } else {
         this.userService.AddUser(this.user).subscribe((res) => {
-          if (res.status == 201) {
-            this.router.navigate(['/']);
+          if (res.status === 201) {
+           // this.router.navigate(['/']);
           }
         });
       }

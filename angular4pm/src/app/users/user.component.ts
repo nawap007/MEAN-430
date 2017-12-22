@@ -36,13 +36,13 @@ export class UserComponent implements OnInit {
       if (this.user._id !== undefined) {
         this.userService.UpdateUser(this.user).subscribe((res) => {
           if (res.status === 200) {
-            // this.router.navigate(['/']);
+            this.userStream = this.userService.GetUsers();
           }
         });
       } else {
         this.userService.AddUser(this.user).subscribe((res) => {
           if (res.status === 201) {
-           // this.router.navigate(['/']);
+              this.userStream = this.userService.GetUsers();
           }
         });
       }

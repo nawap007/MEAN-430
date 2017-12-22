@@ -4,6 +4,7 @@ import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { log } from 'util';
 import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-table',
@@ -12,7 +13,9 @@ import { Observable } from 'rxjs/Observable';
 })
 export class TableComponent implements OnInit {
   @Input() tag: string;
-  @Input() userStream: Observable<User[]>;
+  // @Input() userStream: Observable<User[]>;
+  @Input() userStreamSubject: Subject<User[]>;
+
   public users: User[];
 
   @Output() edit: EventEmitter<number> = new EventEmitter();
@@ -23,7 +26,7 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userStream.subscribe(users => {
+    this.userStreamSubject.subscribe(users => {
         this.users = users;
     });
     console.log('init called');
@@ -37,5 +40,5 @@ export class TableComponent implements OnInit {
     this.delete.emit(id);
   }
 
-  
+
 }

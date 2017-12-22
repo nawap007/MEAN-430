@@ -33,14 +33,14 @@
   <app-table class="pull-left col-sm-6"
               (edit)="editUser($event)"
               (delete)="deleteUser($event)"
-              [userStream]="userStream" 
+              [userStreamSubject]="userStreamSubject"
               [tag]="'First'">
   </app-table>
   <app-table *ngIf="toggle" 
              class="pull-left col-sm-6"
              (edit)="editUser($event)" 
              (delete)="deleteUser($event)"
-             [userStream]="userStream" 
+             [userStreamSubject]="userStreamSubject" 
              [tag]="'Second'">
 </app-table>
 

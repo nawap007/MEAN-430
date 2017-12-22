@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
-import { NgForm } from "@angular/forms";
+import { NgForm } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-create',
@@ -12,6 +13,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CreateComponent implements OnInit {
   user: User;
   public users: User[];
+  public userStream: Observable<User[]>;
+
   id: any;
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) {
     this.user = new User();
@@ -25,9 +28,7 @@ export class CreateComponent implements OnInit {
       });
     });
 
-    this.userService.GetUsers().subscribe((res) => {
-      this.users = res;
-    });
+    this.userStream = this.userService.GetUsers();
   }
   SaveData(form: NgForm) {
     if (form.valid) {

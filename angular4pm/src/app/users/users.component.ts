@@ -11,7 +11,7 @@ import { log } from 'util';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  constructor(private userService: UserService, private router:Router) { 
+  constructor(private userService: UserService, private router: Router) {
     console.log('constructor called');
 
   }
@@ -23,7 +23,7 @@ export class UsersComponent implements OnInit {
     });
   }
   editUser(id) {
-    this.router.navigate(['/edit',id]);
+    this.router.navigate(['/edit', id]);
   }
 
   deleteUser(id) {

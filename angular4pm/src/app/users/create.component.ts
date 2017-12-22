@@ -12,6 +12,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class CreateComponent implements OnInit {
   user: User;
+  toggle = true;
   public users: User[];
   public userStream: Observable<User[]>;
 
@@ -46,5 +47,27 @@ export class CreateComponent implements OnInit {
         });
       }
     }
+  }
+
+  editUser(id) {
+    this.router.navigate(['/edit', id]);
+  }
+
+  deleteUser(id) {
+    if (confirm('Are you sure to delete?')) {
+      this.userService.DeleteUser(id).subscribe((res) => {
+        if (res.status === 200) {
+          for (let i = 0; i < this.users.length; i++) {
+            if (id === this.users[i]._id) {
+              this.users.splice(i, 1);
+            }
+          }
+        }
+      });
+    }
+  }
+
+  toggleVal() {
+    this.toggle = !this.toggle;
   }
 }

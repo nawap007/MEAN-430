@@ -28,7 +28,24 @@
   </div>
 </form>
 <hr>
+
 <div>
-  <app-table class="pull-left col-sm-6" [userStream]="userStream" [tag]="'First'"></app-table>
-  <app-table class="pull-right col-sm-6" [userStream]="userStream" [tag]="'Second'"></app-table>
+  <app-table class="pull-left col-sm-6"
+              (edit)="editUser($event)"
+              (delete)="deleteUser($event)"
+              [userStream]="userStream" 
+              [tag]="'First'">
+  </app-table>
+  <app-table *ngIf="toggle" 
+             class="pull-left col-sm-6"
+             (edit)="editUser($event)" 
+             (delete)="deleteUser($event)"
+             [userStream]="userStream" 
+             [tag]="'Second'">
+</app-table>
+
+<div>
+  <button type="button" (click)="toggleVal()"class="pull-right btn btn-danger">Toggle</button>
+</div>
+
 </div>

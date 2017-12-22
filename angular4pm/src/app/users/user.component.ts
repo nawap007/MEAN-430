@@ -6,11 +6,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
+  selector: 'app-user',
+  templateUrl: './user.component.html',
   styles: []
 })
-export class CreateComponent implements OnInit {
+export class UserComponent implements OnInit {
   user: User;
   toggle = true;
   public users: User[];

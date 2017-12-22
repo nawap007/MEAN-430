@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CreateComponent } from './users/create.component';
+import { UserComponent } from './users/user.component';
 import { AppRoutingModule } from './app.routing';
 import { UserService } from './services/user.service';
 import { TableComponent } from './table/table.component';
@@ -12,7 +12,7 @@ import { TableComponent } from './table/table.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CreateComponent,
+    UserComponent,
     TableComponent
   ],
   imports: [

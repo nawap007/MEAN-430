@@ -4,7 +4,7 @@
 <hr>
 <form #form="ngForm" (ngSubmit)="SaveData(form)" class="form-horizontal">
   <div class="form-group">
-    <label class="col-sm-2">Name</label>
+    <label class="col-sm-2">Namedetached</label>
     <div class="col-sm-10">
       <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control">
     </div>
@@ -36,31 +36,18 @@
               [userStreamSubject]="userStreamSubject"
               [tag]="'First'">
   </app-table>
-  <app-table *ngIf="toggle" 
-             class="pull-left col-sm-6"
+  
+  <app-table 
+              class="pull-left col-sm-6"
              (edit)="editUser($event)" 
              (delete)="deleteUser($event)"
              [userStreamSubject]="userStreamSubject" 
              [tag]="'Second'">
 </app-table>
 
+
 <div>
   <button type="button" (click)="toggleVal()"class="pull-right btn btn-danger">Toggle</button>
 </div>
 
 </div>
-
-
-<ul>
-  <li [class.disabled]="true" (click)="hello()">hello</li>
-  <li>world</li>
-</ul>
-
-<div>      
-  <ul>
-    <li *ngFor="let n of list" [ngClass]="{active:clicked === n}" 
-        (click)="clicked = (clicked === n ? null :n)">
-      <a>{{n}}</a>
-    </li>
-   </ul>
- </div>

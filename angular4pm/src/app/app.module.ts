@@ -8,12 +8,20 @@ import { UserComponent } from './users/user.component';
 import { AppRoutingModule } from './app.routing';
 import { UserService } from './services/user.service';
 import { TableComponent } from './table/table.component';
+import { DetachedUserComponent } from './detached/detacheduser.component';
+import { SampleComponent } from 'app/SampleComponent';
+import { WorkspaceComponent } from './index/workspace/workspace.component';
+import { MainNavigationBarComponent } from './index/mainNavigation/MainNavigationBarComponent';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    TableComponent
+    TableComponent,
+    DetachedUserComponent,
+    SampleComponent,
+    WorkspaceComponent,
+    MainNavigationBarComponent
   ],
   imports: [
     BrowserModule,

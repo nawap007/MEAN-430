@@ -4,7 +4,8 @@ import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { log } from 'util';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Subject, ReplaySubject } from 'rxjs/Rx';
+import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-table',
@@ -14,7 +15,7 @@ import { Subject } from 'rxjs/Subject';
 export class TableComponent implements OnInit {
   @Input() tag: string;
   // @Input() userStream: Observable<User[]>;
-  @Input() userStreamSubject: Subject<User[]>;
+  @Input() userStreamSubject: ReplaySubject<User[]>;
 
   public users: User[];
 
@@ -23,16 +24,24 @@ export class TableComponent implements OnInit {
 
   constructor() {
     console.log('constructor called');
+    if (this.userStreamSubject) {
+      this.userStreamSubject.subscribe(users => {
+        this.users = users;
+      });
+    }
   }
 
   ngOnInit() {
-    this.userStreamSubject.subscribe(users => {
-        this.users = users;
-    });
     console.log('init called');
+    this.userStreamSubject.subscribe(users => {
+      this.users = users;
+  });
   }
 
   editUser(id) {
+    const w: any = window;
+    w.lib = {};
+    w.lib.stream = this.userStreamSubject.asObservable();
     this.edit.emit(id);
   }
 

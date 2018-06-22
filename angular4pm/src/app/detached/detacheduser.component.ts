@@ -1,26 +1,23 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject, ReplaySubject } from 'rxjs/Rx';
-import {  } from '@angula/core';
-import { log } from 'util';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styles: [],
-  changeDetection: ChangeDetectionStrategy.Default
+  selector: 'app-detacheduser',
+  templateUrl: './detacheduser.component.html',
+  styles: []
 })
-export class UserComponent implements OnInit {
+export class DetachedUserComponent implements OnInit {
   user: User;
   toggle = true;
   public users: User[];
-  public userStream: Observable<User[]>;
-  public userStreamSubject = new ReplaySubject<User[]>();
-  public list: string[] = ['car','dog'];
+  // public userStream: Observable<User[]>;
+  private w: any = window;
+  public userStreamSubject = this.w.opener.shared.userStream;
 
   id: any;
   constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) {
@@ -31,28 +28,14 @@ export class UserComponent implements OnInit {
         this.route.params.subscribe((params) => {
           this.id = params.id;
           if (this.id !== undefined) {
-              this.userService.GetUser(this.id).repeat(10).subscribe((res) => {
+              this.userService.GetUser(this.id).subscribe((res) => {
                 this.user = res;
               });
         }
         });
-    this.userService.GetUsers().repeat(10).subscribe((user: User[]) => {
+    this.userStreamSubject.subscribe((user: User[]) => {
       this.userStreamSubject.next(user);
     });
-
-
-//     const pollData = this.userService.GetUsers()
-//       .map(res => {
-//         console.log(res);
-
-//       });
-
-// pollData.expand(
-// () => Observable.timer(4000).concatMap(() => pollData)
-// ).subscribe();
-
-
-
   }
   SaveData(form: NgForm) {
     if (form.valid) {
@@ -94,16 +77,10 @@ export class UserComponent implements OnInit {
 
   toggleVal() {
     const w: any = window;
-    w.shared = {};
-    w.shared.userStream = this.userStreamSubject;
+    w.MyLib = {};
 
-    window.open('/detached', '_blank',
-      'toolbar=no, titlebar=no, scrollbars=yes, menubar=no, location=no,status=no, menubar=0, resizable=0, top=200, left=1500, width=300, height=500');
+    window.open('/built/#/detachedHelper', '_blank',
+    'toolbar=no, titlebar=no, scrollbars=yes, menubar=no, location=no,status=no, menubar=0, resizable=0, top=200, left=1500, width=300, height=500');
     // this.toggle = !this.toggle;
-  }
-
-  hello() {
-    console.log('hello');
-
   }
 }

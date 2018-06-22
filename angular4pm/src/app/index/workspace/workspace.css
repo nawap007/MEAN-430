@@ -1,0 +1,11 @@
+.teampatent-container {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row;
+  z-index: 0;
+
+  workspace  {
+    min-width: 1270px;
+  }
+}

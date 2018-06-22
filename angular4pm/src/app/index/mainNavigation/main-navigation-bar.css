@@ -1,0 +1,34 @@
+.workspace-u-r-here {
+        background: #0e35af;
+        display: none;
+        line-height: 1.4287514;
+        letter-spacing: .04428em;
+        color: #fff;
+        text-align: center; 
+}
+
+.workspace-navigation {
+        box-shadow: 0 rem(1px) goldenrod;
+}
+
+.workspace-navigation__list,
+.workspace-second-nav__list {
+  padding: 0;
+  margin: 0;
+  background: rebeccapurple;
+  list-style: none;
+}
+
+.workspace-navigation__list-item,
+.workspace-second-nav__list-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.workspace-second-nav {
+        box-shadow: 0 rem(-1px) 0 green;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+}

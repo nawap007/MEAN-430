@@ -1,0 +1,99 @@
+<div class="navbar-header"
+     
+     data-id="global-navigation"
+     element-tab-id="global-navigation"
+     >
+  <button class="navbar-brand"
+         type="button"
+          role="button"
+          data-id="nav-dropdown-toggle"
+          aria-haspopup="true"
+          element-tab-id="global-navigation"
+         >
+    <div class="navbar-brand__inner"
+         element-tab-id="global-navigation">
+      <span class="navbar-brand__svg-container"
+            aria-hidden="true"
+            element-tab-id="global-navigation">
+        <svg viewBox="0 0 47 45"
+             preserveAspectRatio="xMidYMid meet"
+             class="navbar-brand__svg-element"
+             tabindex="-1"
+             focusable="false"
+             element-tab-id="global-navigation">
+          <path transform="scale(0.0465, -0.0465) translate(0,-960)"
+                d="M96 768h192c17.673 0 32-14.327
+          32-32v-96c0-17.673-14.327-32-32-32h-192c-17.673 0-32 14.327-32 32v96c0 17.673 14.327 32 32 32zM416
+          768h192c17.673 0 32-14.327 32-32v-96c0-17.673-14.327-32-32-32h-192c-17.673 0-32 14.327-32 32v96c0
+          17.673 14.327 32 32 32zM736 768h192c17.673 0 32-14.327 32-32v-96c0-17.673-14.327-32-32-32h-192c-17.673 0-32
+          14.327-32 32v96c0 17.673 14.327 32 32 32zM96 544h192c17.673 0 32-14.327 32-32v-96c0-17.673-14.327-32-32-32h-192c-17.673
+          0-32 14.327-32 32v96c0 17.673 14.327 32 32 32zM416 544h192c17.673 0 32-14.327 32-32v-96c0-17.673-14.327-32-32-32h-192c-17.673
+          0-32 14.327-32 32v96c0 17.673 14.327 32 32 32zM736 544h192c17.673 0 32-14.327 32-32v-96c0-17.673-14.327-32-32-32h-192c-17.673
+          0-32 14.327-32 32v96c0 17.673 14.327 32 32 32zM96 320h192c17.673 0 32-14.327 32-32v-96c0-17.673-14.327-32-32-32h-192c-17.673
+          0-32 14.327-32 32v96c0 17.673 14.327 32 32 32zM416 320h192c17.673 0 32-14.327 32-32v-96c0-17.673-14.327-32-32-32h-192c-17.673
+          0-32 14.327-32 32v96c0 17.673 14.327 32 32 32zM736 320h192c17.673 0 32-14.327 32-32v-96c0-17.673-14.327-32-32-32h-192c-17.673
+          0-32 14.327-32 32v96c0 17.673 14.327 32 32 32z"/>
+        </svg>
+      </span>
+      <span *ngIf="buttonContent"
+            class="navbar-brand__module-name"
+            data-id="global-navigation-module-name"
+            [simple-tooltip]="buttonContent"
+            [simple-tooltip-ellipsis-only]="true">
+        {{buttonContent}}
+      </span>
+    </div>
+  </button>
+  <ul class="pap-o-dropdown__content tp-global-navigation__content"
+      data-id="global-navigation-items"
+      (keydown)="updateNavigation($event)">
+    <li>
+      <module-selector [expandWarning] = "expandWarning"
+                       [workspaceMode]="workspaceMode"
+                       [clearUrl]="clearUrl"></module-selector>
+    </li>
+    <li class="with-divider"
+        data-role="global-navigation-item">
+      <a class="tp-menu-item dim login-bar__link pap-tabs-header__link"
+         element-tab-id="global-navigation"
+         data-id="user-account"
+         (click)="notify(userAccountRoute)">{{appI18N.myProfile}}
+        <span *ngIf="displayDeputisationIndicatorStream | async"
+              class="tp-global-navigation__deputisation-indicator"
+              [title]="appI18N.proposedDeputisation"
+              [attr.aria-label]="appI18N.proposedDeputisation"></span>
+      </a>
+    </li>
+    <li class="with-divider"
+        data-role="global-navigation-item">
+      <a class="tp-menu-item dim login-bar__link pap-tabs-header__link"
+         element-tab-id="global-navigation"
+         data-id="accounts"
+         (click)="notify(accountRoute)">{{commonI18N.accounts}}</a>
+    </li>
+    <li *ngIf="displayAutoSuggestion"
+        class="with-divider"
+        data-role="global-navigation-item">
+      <a class="tp-menu-item dim login-bar__link pap-tabs-header__link"
+         element-tab-id="global-navigation"
+         data-id="autosuggestion"
+         (click)="notify(autoSuggestionRoute)">{{appI18N.autoSuggestionNavigation}}</a>
+    </li>
+    <li class="with-divider"
+        data-role="global-navigation-item">
+      <a href="#settings"
+         class="tp-menu-item dim login-bar__link"
+         element-tab-id="global-navigation"
+         data-id="settings"
+         (click)="openSettings($event)">{{commonI18N.settings}}</a>
+    </li>
+    <li class="with-divider">
+      <search-and-open (search)="close()"></search-and-open>
+    </li>
+    <li class="with-divider"
+        data-role="global-navigation-item">
+      <online-help-link class="online-help-link"></online-help-link>
+    </li>
+  </ul>
+</div>
+
